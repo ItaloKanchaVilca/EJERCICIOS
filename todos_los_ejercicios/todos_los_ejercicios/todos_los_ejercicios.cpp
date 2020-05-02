@@ -1,19 +1,277 @@
-// todos_los_ejercicios.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
-
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+
+//CAPITULO 4
+
+//4.26 dibujar un cuadrado con asteriscos
+/*
+int main()
+{
+	int n;
+	cout << "ingrese el tamaño del cuadrado:  ";
+	cin >> n;
+	if (n != 1)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			cout << "*";
+		}
+		cout << "\r\n";
+		for (int i = 0; i < n - 2; i++)
+		{
+			cout << "*";
+			for (int j = 0; j < n - 2; j++)
+			{
+				cout << " ";
+			}
+			cout << "*";
+			cout << "\r\n";
+		}
+		for (int i = 0; i < n; i++)
+		{
+			cout << "*";
+		}
+	}
+	else
+	{
+		cout << "*";
+	}
+	return 0;
+}
+*/
+
+//4.27 saber si es o mo un numero capicua
+/*
+int main()
+{
+	int numero, aux, resto, numeroI = 0;
+	cout << "dame un numero: ";
+	cin >> numero;
+	aux = numero;
+	while (aux > 0)
+	{
+		resto = aux % 10;
+		aux = aux / 10;
+		numeroI = numeroI * 10 + resto;
+	}
+	if (numero == numeroI)
+	{
+		cout << numero << " es capicua" << endl;
+	}
+	else
+	{
+		cout << numero << " no es capicua" << endl;
+	}
+	return 0;
+}
+*/
+
+//4.28 numero binario a decimal con vectores
+/*
+int main()
+{
+	int numero, digito, posicion = 0, resultado = 0;
+	long vector[] = { 1,2,4,8,16,32,64,128,256,512,1024 };
+	cout << "inserte un numero binario: ";
+	cin >> numero;
+	while (numero > 0)
+	{
+		digito = numero % 10;
+		if (digito == 1)
+		{
+			resultado = resultado + vector[posicion];
+		}
+		posicion++;
+		numero = numero / 10;
+	}
+	cout << " El numero convertido en decimal es: " << resultado << endl;
+	return 0;
+}
+*/
+
+//4.30 sucesion fibonacci infinita 
+/*
+int main()
+{
+	int numero = 0, numero1 = 0, numero2 = 1, i = 1;
+	cout << "sucesion de fibonacci: " << endl;
+	while (i)
+	{
+		numero1 = numero2;
+		numero2 = numero;
+		numero = numero1 + numero2;
+		i++;
+		cout << numero << " ";
+	}
+	return 0;
+}
+*/
+
+
+
+
+
+
+//CAPITULO 5
+
+//5.11 encontrar el valor mas pequeño 
+/*
+int main()
+{
+	int numero[100], n,mayor=0,menor;
+
+	cout << "inserte el numero de elementos para extraer el menor: ";
+	cin >> n;
+
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << i + 1 << ". inserte un numero:  " << endl;
+		cin >> numero[i];
+
+		if (mayor < numero[i])
+		{
+			mayor = numero[i];
+		}
+	}
+
+	cout << "El mayor elemento de los ingresados es: " << mayor << endl;
+
+	menor = mayor;
+
+	for (int i = 0; i < n; i++)
+	{
+		if (menor>numero[i])
+		{
+			menor = numero[i];
+		}
+	}
+
+	cout << "El menor elemento de los ingresados es: " << menor << endl;
+
+
+	return 0;
+}
+*/
+
+//5.15 dibujar triangulos con asteriscos
+/*
+int main()
+{
+	int altura;
+
+	cout << "Inserte la altura de mi triangulo: ";
+	cin >> altura;
+
+	//forma ascendente
+	for (int i = 1; i <= altura; i++)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			cout << "*";
+		}
+		cout << "\n";
+	}
+
+	cout << "\n";
+
+	//forma descendemte
+	for (int i = altura; i > 0; i--)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			cout << "*";
+		}
+		cout << "\n";
+	}
+
+	cout << "\n";
+
+	//forma ascendente por la derecha
+
+	return 0;
+}
+*/
+
+//5.19 calcular la aproximacion del valor de pi 
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	long long i, n;
+	long  double s, pi;
+
+	cout << "Ingrese el valor de n: ";
+	cin >> n;
+
+	s = 0;
+
+	for (i = 0; i < n; i++)
+	{
+		s = s + sqrt(n * n - i * i);
+	}
+	pi = (4 * s) / (n * n);
+
+	cout << "pi vale aproximadamente: " << pi << endl;
+
+
 }
 
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
 
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
+//5.29
+
+
+
+
+
+
+
+//CAPITULO 6 PARTE 1
+
+//6.12
+
+
+
+//6.18
+
+
+
+//6.20
+
+
+
+//6.25
+
+
+
+//6.29
+
+
+
+//6.30
+
+
+
+
+
+
+
+//CAPITULO 6 PARTE 2
+
+//6.36
+
+
+
+//6.37
+
+
+
+//6.39
+
+
+
+//6.41
+
