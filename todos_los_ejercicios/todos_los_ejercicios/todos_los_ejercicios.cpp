@@ -202,21 +202,23 @@ int main()
 int main()
 {
 	long long i, n;
-	long  double s, pi;
+	long  double sumatoria, pi;
 
-	cout << "Ingrese el valor de n: ";
+	cout << "sugerencia: para que pi valga 3.14159, n tiene que tomar le valor de 1 000 000  " << endl;
+	cout << "Ingrese el valor de n para aproximarnos a pi : ";
 	cin >> n;
+	cout << endl;
 
-	s = 0;
+	sumatoria = 0;
 
 	for (i = 0; i < n; i++)
 	{
-		s = s + sqrt(n * n - i * i);
+		sumatoria = sumatoria + sqrt(n * n - i * i);
 	}
-	pi = (4 * s) / (n * n);
+	pi = (4 * sumatoria) / (n * n);
 
-	cout << "pi vale aproximadamente: " << pi << endl;
-
+	cout << endl;
+	cout <<"cuando n"<<" toma el valor de: "<<n<<", "<< "pi vale aproximadamente: " << pi << endl;
 
 }
 
