@@ -198,7 +198,7 @@ int main()
 */
 
 //5.19 calcular la aproximacion del valor de pi 
-
+/*
 int main()
 {
 	long long i, n;
@@ -221,7 +221,7 @@ int main()
 	cout <<"cuando n"<<" toma el valor de: "<<n<<", "<< "pi vale aproximadamente: " << pi << endl;
 
 }
-
+*/
 
 //5.29
 
@@ -237,9 +237,39 @@ int main()
 
 
 
-//6.18
+//6.18 potenciacion
+/*
+int potencia(int base, int exponente)
+{
+	int respuesta;
+
+	if (exponente == 1) //caso base
+	{
+		respuesta = base;
+	}
+	else //caso general
+	{
+		respuesta = base * potencia(base, exponente - 1);
+	}
+	return respuesta;
+}
+
+int main() {
+
+	int base, exponente;
+
+	cout << "digite un numero para la base: ";
+	cin >> base;
+
+	cout << "digite un numero para el exponente: ";
+	cin >> exponente;
+
+	cout << "la potencia de base " << base << " elevada al exponente " << exponente <<" es: "<<potencia(base,exponente)<< endl;
 
 
+	return 0;
+}
+*/
 
 //6.20
 
