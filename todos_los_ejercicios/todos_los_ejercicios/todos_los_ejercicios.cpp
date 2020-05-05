@@ -223,7 +223,7 @@ int main()
 }
 */
 
-//5.29
+//5.29 no entiendo profesor :(
 
 
 
@@ -234,8 +234,58 @@ int main()
 //CAPITULO 6 PARTE 1
 
 //6.12
+/*
+int pagoTotal(float horas) 
+{
 
 
+	if (horas <= 3) {
+		return 20;
+	}
+	else 
+	{
+		if (horas < 24)
+		{
+			return 20 + (5 * (horas - 3));
+		}
+		else 
+		{
+			return 50;
+		}
+	}
+}
+
+int main()
+{
+	float tiempo1, tiempo2, tiempo3, horasTotales, cargoTotal, cargo1, cargo2, cargo3;
+
+	cout << "CARGOS POR ESTACIONAMIENTOSP" << endl;
+	cout << endl;
+	cout << "¿ Cuantas horas se quedo el carro 1 ?  "; 
+	cin >> tiempo1;
+	cout << "¿ Cuantas horas se quedo el carro 2 ?  "; 
+	cin >> tiempo2;
+	cout << "¿ Cuantas horas se quedo el carro 3 ?  "; 
+	cin >> tiempo3;
+
+	horasTotales = tiempo1 + tiempo2 + tiempo3;
+	cargoTotal = pagoTotal(tiempo1) + pagoTotal(tiempo2) + pagoTotal(tiempo3);
+	cargo1 = pagoTotal(tiempo1);
+	cargo2 = pagoTotal(tiempo2);
+	cargo3 = pagoTotal(tiempo3);
+
+	cout << endl;
+
+	cout << "Carro" << "\t" << " Horas " << "\t" << "Cargo" << endl;
+	cout << "1"<<"\t" << fixed << setprecision(1) << tiempo1 << "\t" << setprecision(2) << cargo1 << endl;
+	cout << "2" << "\t" << fixed << setprecision(1) << tiempo2 << "\t" << setprecision(2) << cargo2 << endl;
+	cout << "3"<<"\t" << fixed << setprecision(1) << tiempo3 << "\t" << setprecision(2) << cargo3 << endl;
+	cout << endl;
+	cout << "TOTAL" << "\t" << fixed << setprecision(1) << horasTotales << "\t" << fixed << setprecision(2) << cargoTotal << endl;
+
+	return 0;
+}
+*/
 
 //6.18 potenciacion
 /*
@@ -272,38 +322,226 @@ int main() {
 */
 
 //6.20
+/*
+bool factor(int numero1, int numero2) 
+{
+	if (numero1 % numero2 == 0) 
+	{
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
+}
+
+int main()
+{
+	int numero1, numero2;
+
+	cout << "Ingrese primer numero: "; 
+	cin >> numero1;
+	cout << "Ingrese segundo numero: "; 
+	cin >> numero2;
+
+	cout << endl;
+
+	if (factor(numero1, numero2) == true) 
+	{
+		cout << "El numeroo 1 es igual al numero 2:   " << factor( numero1, numero2)<<" = TRUE";
+	}
+	else 
+	{
+		cout << "El numeroo 1 no es igual al numero 2:   " << factor(numero1, numero2) << " = FALSE";
+	}
+
+	return 0;
+}
+*/
+
+//6.25 profe no me saleeeeeee :( 
 
 
 
-//6.25
+//6.29 funcion numero primo
+/*
+void esPrimo(int numero) {
+	
+	int cont = 0,i=2;	
+	if (numero == 1) 
+	{
+		cout << "no es primo" << endl;
+	}
+
+	if (numero == 2) 
+	{
+		cout << "es primo" << endl;
+	}
+	else 
+	{
+		while (i < numero) 
+		{
+			if (numero % i == 0) 
+			{
+				cout << "no es primo" << endl;
+				break;
+			}
+
+			else 
+			{
+				cont++;
+			}
+			i++;
+		}
+		if (cont == numero - 2)
+		{
+			cout << "Es primo" << endl;
+		}
+
+	}
+}
+
+int main(void)
+{
+	int numero;
+	
+	cout << "ingrese numero :" << endl;
+	cin >> numero;
+
+	cout << numero << ": ";
+	esPrimo(numero);
+
+	return 0;
+}
+*/
+
+//6.30 invertir un numero de formaa recursiva
+/*
+void invertir(int numero)
+{
+	cout << numero % 10;
+
+	if (numero > 10)// caso base
+	{
+		invertir(numero / 10);
+	}
+}
+
+int main(void)
+{
+	int numero, aux;
+
+	cout << "Ingrese un numero para invertirlo: ";
+	cin >> numero;
+
+	cout << endl;
+
+	cout << "El numero invertido es: ";
+
+	invertir(numero);
 
 
-
-//6.29
-
-
-
-//6.30
-
-
-
+	return 0;
+}
+*/
 
 
 
 
 //CAPITULO 6 PARTE 2
 
-//6.36
+//6.36 potenciacion recursivamente
+/*
+int potenciacion(int base, int exponente)
+{
+	int potencia;
+
+	if (exponente == 1) //caso base
+	{
+		potencia = base;
+	}
+	else // caso general
+	{
+		potencia = base * potenciacion(base, exponente - 1);
+	}
+	return potencia;
+}
+
+int main()
+{
+	int base, exponente;
+	cout << "inserte el valor de la base: ";
+	cin >> base;
+
+	cout << "inserte el valor del exponente: ";
+	cin >> exponente;
+
+	cout << endl;
+	cout << "la potencia de " << base << " elevada a " << exponente << " es: " << potenciacion(base, exponente);
+
+	return 0;
+}
+*/
 
 
+//6.37 fibonacci iterativo
+/*
+int fibonacci(int numero) {
 
-//6.37
+	int a = 0, b = 1, c = 0;
+	
+	for (int i = 1; i < numero; i++)
+	{
+		c = a + b;
+		a = b;
+		b = c;
+	}
+	return c;
+}
+
+int main()
+{
+	int numero;
+
+	cout << "Ingrese el numero del fibonacci que quiera:  "; 
+	cin >> numero;
+
+	cout << endl;
+	
+	cout << "El fibonacci de " << numero << " es:  " << fibonacci(numero) << endl;
+	
+	return 0;
+}
+*/
+
+//6.39 no me sale profe :(
 
 
+//6.41 maximo comun divisor de forma rescursiva
+/*
+int MCD(int numero1, int numero2)
+{
+	if (numero1 == 0)
+	{
+		return numero2;
+	}
+	return MCD(numero2 % numero1, numero1);
+}
 
-//6.39
+int main()
+{
+	int numero1, numero2;
+	
+	cout << "Dame el primer numero: ";
+	cin>>numero1;
 
+	cout << "Dame el segundo numero: ";
+	cin >> numero2;
 
+	cout << endl;
 
-//6.41
+	cout << "El maximo comun divisor es: " << MCD(numero1, numero2);
 
+	return 0; 
+}
+*/
