@@ -153,7 +153,7 @@ int main()
 //CAPITULO 5
 
 //5.11 encontrar el valor mas pequeño 
-
+/*
 int main()
 {
 	int numero[100], numeroE, mayorN = 0, menor;
@@ -189,7 +189,7 @@ int main()
 
 	return 0;
 }
-
+*/
 
 //5.15 dibujar triangulos con asteriscos
 /*
@@ -551,14 +551,17 @@ int main()
 
 
 //6.41 maximo comun divisor de forma rescursiva
-/*
-int MCD(int numero1, int numero2)
+
+int MCD(int numero1, int numero2)//70,25
 {
 	if (numero1 == 0)
 	{
 		return numero2;
 	}
-	return MCD(numero2 % numero1, numero1);
+	else
+	{
+		return MCD(numero2 % numero1, numero1);//
+	}
 }
 
 int main()
@@ -577,4 +580,3 @@ int main()
 
 	return 0; 
 }
-*/
