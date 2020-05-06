@@ -81,101 +81,103 @@ int main()
 }
 */
 
-//4.28 numero binario a decimal con vectores
+//4.28 numero binario a decimal ,dos formas
 /*
 int main()
 {
-	int numero, digito, posicion = 0, resultado = 0;
+	int numero, digitoU, i = 0, sumaB = 0;
 	long vector[] = { 1,2,4,8,16,32,64,128,256,512,1024 };
+
 	cout << "inserte un numero binario: ";
 	cin >> numero;
+
 	while (numero > 0)
 	{
-		digito = numero % 10;
-		if (digito == 1)
+		digitoU = numero % 10;//extraigo el ultimo digito
+		if (digitoU == 1)
 		{
-			resultado = resultado + vector[posicion];
+			sumaB = sumaB + vector[i];
 		}
-		posicion++;
-		numero = numero / 10;
+		i++;//mi iterdaor va aumentando
+		numero = numero / 10;//actualizo la variable numero
 	}
-	cout << " El numero convertido en decimal es: " << resultado << endl;
+
+	cout << " El numero convertido en decimal es: " << sumaB << endl;
 	return 0;
 }
 */
 
-int main()
+/*
+int main()//otra forma
 {
-	int resto, contador = 0,numero,binario;
+	int numeroB, resto, binario, sumaB = 0;
 
 	cout << "Ingrese un numero binario: "; 
-	cin >> numero;
+	cin >> numeroB;
 
-	for (int i = 0; numero != 0; i++) //111
+	for (int i = 0; numeroB != 0; i++) //101
 	{
-		resto = numero % 10;//1	 1	1
-		binario = resto * pow(2, i);//1	2	4
-		contador = contador + binario;//1		3	7
-		numero = numero / 10;//11	1	0
+		resto = numeroB % 10;//1	 0	1
+		binario = resto * pow(2, i);//1		0	4
+		sumaB = sumaB + binario;//1		1	5
+		numeroB = numeroB / 10;//10		1	0
 	}
-	cout << contador;
 
+	cout << "\n" << "el numero binario ingresado en decimal equivale a: " << sumaB << "\n";
+	
 	return 0;
 }
-
+*/
 
 
 //4.30 sucesion fibonacci infinita 
 /*
 int main()
 {
-	int numero = 0, numero1 = 0, numero2 = 1, i = 1;
+	int numero1 = 0, numero2 = 0, numero3 = 1;
+
 	cout << "sucesion de fibonacci: " << endl;
-	while (i)
+
+	while (1)
 	{
-		numero1 = numero2;
-		numero2 = numero;
-		numero = numero1 + numero2;
-		i++;
-		cout << numero << " ";
+		numero2 = numero3;//1	0	1
+		numero3 = numero1;//0	1	1
+		numero1 = numero2 + numero3;//1	1	2
+
+		cout << numero1 << " "<< "\n";
 	}
-	return 0;
 }
 */
-
-
-
-
 
 
 //CAPITULO 5
 
 //5.11 encontrar el valor mas pequeño 
-/*
+
 int main()
 {
-	int numero[100], n,mayor=0,menor;
+	int numero[100], numeroE, mayorN = 0, menor;
 
-	cout << "inserte el numero de elementos para extraer el menor: ";
-	cin >> n;
+	cout << "CUANTOS ELEMENTOS VAMOS A COMPARAR: : ";
+	cin >> numeroE;
 
 
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < numeroE; i++)//pide los numeros para comparar y voy almacenando el mayor
 	{
 		cout << i + 1 << ". inserte un numero:  " << endl;
 		cin >> numero[i];
 
-		if (mayor < numero[i])
+		if (mayorN < numero[i])
 		{
-			mayor = numero[i];
+			mayorN = numero[i];
 		}
 	}
 
-	cout << "El mayor elemento de los ingresados es: " << mayor << endl;
+	cout << "El mayor elemento de los ingresados es: " << mayorN << endl;
 
-	menor = mayor;
+	menor = mayorN;
 
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < numeroE; i++)//comparo los numeros y obtengo elmenor
 	{
 		if (menor>numero[i])
 		{
@@ -185,10 +187,9 @@ int main()
 
 	cout << "El menor elemento de los ingresados es: " << menor << endl;
 
-
 	return 0;
 }
-*/
+
 
 //5.15 dibujar triangulos con asteriscos
 /*
