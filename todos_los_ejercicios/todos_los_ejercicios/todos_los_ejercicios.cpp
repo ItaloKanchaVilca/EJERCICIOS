@@ -11,32 +11,38 @@ using namespace std;
 /*
 int main()
 {
-	int n;
-	cout << "ingrese el tamaño del cuadrado:  ";
-	cin >> n;
-	if (n != 1)
+	int lado;
+
+	cout << "ingrese el lado del cuadrado:  ";
+	cin >> lado;
+
+	if (lado != 1)
 	{
-		for (int i = 0; i < n; i++)
+		for (int i = 0; i < lado; i++)//imprime primera fila de asteriscos
 		{
 			cout << "*";
 		}
-		cout << "\r\n";
-		for (int i = 0; i < n - 2; i++)
+
+		cout << endl;//salto de linea
+
+		for (int i = 0; i < lado - 2; i++) //0
 		{
-			cout << "*";
-			for (int j = 0; j < n - 2; j++)
+			cout << "*";//primer asterisco
+
+			for (int j = 0; j < lado - 2; j++)//0
 			{
 				cout << " ";
 			}
-			cout << "*";
-			cout << "\r\n";
+
+			cout << "*";//ultimo asterisco
+			cout << endl;
 		}
-		for (int i = 0; i < n; i++)
+		for (int i = 0; i < lado; i++) // imprime ultima fila de asteriscos
 		{
 			cout << "*";
 		}
 	}
-	else
+	else//caso base
 	{
 		cout << "*";
 	}
@@ -49,19 +55,24 @@ int main()
 int main()
 {
 	int numero, aux, resto, numeroI = 0;
+
 	cout << "dame un numero: ";
 	cin >> numero;
+	
 	aux = numero;
-	while (aux > 0)
+
+	while (aux > 0)//invierte el numero	131		
 	{
-		resto = aux % 10;
-		aux = aux / 10;
-		numeroI = numeroI * 10 + resto;
+		resto = aux % 10;//me da el resto	1	3	1
+		aux = aux / 10;//quita el ultimo numero		13	1	0
+		numeroI = numeroI * 10 + resto;//almaceno el numero pero invertido		1	13	131
 	}
+
 	if (numero == numeroI)
 	{
 		cout << numero << " es capicua" << endl;
 	}
+
 	else
 	{
 		cout << numero << " no es capicua" << endl;
@@ -92,6 +103,27 @@ int main()
 	return 0;
 }
 */
+
+int main()
+{
+	int resto, contador = 0,numero,binario;
+
+	cout << "Ingrese un numero binario: "; 
+	cin >> numero;
+
+	for (int i = 0; numero != 0; i++) //111
+	{
+		resto = numero % 10;//1	 1	1
+		binario = resto * pow(2, i);//1	2	4
+		contador = contador + binario;//1		3	7
+		numero = numero / 10;//11	1	0
+	}
+	cout << contador;
+
+	return 0;
+}
+
+
 
 //4.30 sucesion fibonacci infinita 
 /*
