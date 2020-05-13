@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
-
+#include <array>
 using namespace std;
 
 
@@ -551,7 +551,7 @@ int main()
 
 
 //6.41 maximo comun divisor de forma rescursiva
-
+/*
 int MCD(int numero1, int numero2)//70,25
 {
 	if (numero1 == 0)
@@ -579,4 +579,126 @@ int main()
 	cout << "El maximo comun divisor es: " << MCD(numero1, numero2);
 
 	return 0; 
+}
+*/
+
+//CLASES
+#include <iostream> // cout y cin
+#include <string>  // cadenas
+#include <cmath> // rand() -> aleatorio
+
+using namespace std;
+
+class Pokemon {
+private:
+	int vida;
+	int fuerza;
+	int agilidad;
+	string nombre;
+	string ataques[10];
+	int nAtaques = 0; // int nAtaques{ 0 };
+public:
+	//Constructor
+	explicit Pokemon(string _nombre) : nombre{ _nombre } {}
+
+	/*Pokemon(string _nombre){
+		nombre = _nombre;
+	}*/
+
+	void adicionarAtaque(string nombreAtaque) {
+		ataques[nAtaques] = nombreAtaque;
+		nAtaques++;
+	}
+
+	void go() {
+		cout << nombre << " ha sido seleccionado !" << endl;
+		cout << "Go go " << nombre << endl;
+	}
+
+	void ataca() {
+		int seleccionado = rand() % nAtaques; //rand() aleatorio entre 0 a 2 mil millones
+		cout << nombre << " lanzó " << ataques[seleccionado] << endl;
+	}
+
+	void setVida(int _vida) {
+		vida = _vida;
+	}
+	void setFuerza(int _fuerza) {
+		fuerza = _fuerza;
+	}
+	void setAgilidad(int _agilidad) {
+		agilidad = _agilidad;
+	}
+
+	int getVida() {
+		return vida;
+	}
+
+	void muestraEstado() {
+		cout << "Vida=" << vida << endl;
+		cout << "Fuerza=" << fuerza << endl;
+		cout << "Agilidad=" << agilidad << endl;
+	}
+
+};
+
+class JuegoPokemon {
+private:
+	Pokemon pokemon1;
+	Pokemon pokemon2;
+public:
+	explicit JuegoPokemon(Pokemon p1, Pokemon p2) : pokemon1{ p1 }, pokemon2{ p2 } {}
+
+	void lanzaRodada() {
+		pokemon1.go();
+		pokemon1.ataca();
+
+		pokemon2.go();
+		pokemon2.ataca();
+
+		float baja = 0.1 + (rand() % 9) / 10.0; //valores aletorios de 0.1 hasta 0.9
+
+
+		pokemon1.setVida(pokemon1.getVida() * baja);
+		pokemon2.setVida(pokemon2.getVida() * baja);
+	}
+
+	void muestraResultados() {
+		pokemon1.muestraEstado();
+		pokemon2.muestraEstado();
+	}
+};
+
+
+int main() {
+	Pokemon pikachu("Pikachu");
+	pikachu.setVida(100);
+	pikachu.setFuerza(50);
+	pikachu.setAgilidad(80);
+	pikachu.adicionarAtaque("Attack trueno"); // pos 0
+	pikachu.adicionarAtaque("Bola voltio");  // pos 1
+	pikachu.adicionarAtaque("Cola de hierro"); // pos 2
+	pikachu.adicionarAtaque("Ataque rápido");  // pos 3
+
+	Pokemon charmander("Charmander");
+	charmander.setVida(100);
+	charmander.setFuerza(90);
+	charmander.setAgilidad(70);
+	charmander.adicionarAtaque("Bola de fuego");
+	charmander.adicionarAtaque("Ascuas");
+	charmander.adicionarAtaque("Llamarada");
+
+	JuegoPokemon juego(pikachu, charmander);
+	int opcion;
+	cout << "Continuar(1) no(0)" << endl;
+	cin >> opcion;
+	while (opcion != 0) {
+		if (opcion == 1) {
+			juego.lanzaRodada();
+			juego.muestraResultados();
+		}
+
+		cout << "Continuar(1) no(0)" << endl;
+		cin >> opcion;
+	}
 }
